@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgh2jvtowvkak"]
+
+[ext_resource type="Script" path="res://fire_wand.gd" id="1_i5k4g"]
+[ext_resource type="Texture2D" uid="uid://bvq3k8umopoj2" path="res://wand.png" id="2_040bo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xugfg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_040bo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FireWand" type="Node2D"]
+script = ExtResource("1_i5k4g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 0.806342
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_xugfg")
+
+[node name="AttackTimer" type="Timer" parent="."]
+editor_description = "Attack Timer"
+
+[node name="AttackPos" type="Marker2D" parent="."]
+position = Vector2(12, -1)
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout" flags=18]

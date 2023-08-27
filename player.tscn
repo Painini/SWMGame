@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://darttd7ke6668"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_qocrt"]
+[ext_resource type="Texture2D" uid="uid://dn74lcb2hvsfx" path="res://BlueWizard.png" id="2_nmtv1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jm88e"]
+radius = 7.66667
+height = 25.3333
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kn2gd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nmtv1")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7bfc"]
+size = Vector2(45, 72.5)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_qocrt")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_jm88e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 8)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_kn2gd")
+animation = &"Idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.8, 1.8)
+limit_left = 0
+
+[node name="HurtboxPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxPlayer"]
+position = Vector2(-3.50177e-06, 1.25)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_y7bfc")
+debug_color = Color(0.996078, 0, 0.117647, 0.419608)

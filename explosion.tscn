@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://caxwh7b0g4ypn"]
+
+[ext_resource type="Texture2D" uid="uid://2ja58n84p6hj" path="res://explosion_particle_rounded.png" id="1_2thxh"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_51ni2"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_j1qhe"]
+offsets = PackedFloat32Array(0, 0.121581, 0.641975, 0.876543)
+colors = PackedColorArray(1, 1, 1, 0.454902, 0.774337, 0.786591, 0, 1, 0.2, 0, 0, 1, 0.247059, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pkukg"]
+gradient = SubResource("Gradient_j1qhe")
+width = 100
+
+[sub_resource type="Curve" id="Curve_etsgx"]
+max_value = 100.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.381526, 6.31579), 0.0, 0.0, 0, 0, Vector2(0.518072, 94.7368), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vvtg3"]
+curve = SubResource("Curve_etsgx")
+
+[sub_resource type="Curve" id="Curve_vn6ih"]
+_data = [Vector2(0, 0.378947), 0.0, 0.0, 0, 0, Vector2(0.457831, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2d01y"]
+curve = SubResource("Curve_vn6ih")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gwxpo"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 400.0
+angular_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 300.0
+damping_max = 300.0
+damping_curve = SubResource("CurveTexture_vvtg3")
+scale_min = 0.7
+scale_curve = SubResource("CurveTexture_2d01y")
+color_ramp = SubResource("GradientTexture1D_pkukg")
+
+[node name="Explosion" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_51ni2")
+emitting = false
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_gwxpo")
+texture = ExtResource("1_2thxh")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0

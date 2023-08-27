@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgh2jvtowvkak"]
+
+[ext_resource type="Texture2D" uid="uid://bvq3k8umopoj2" path="res://wand.png" id="2_040bo"]
+
+[sub_resource type="GDScript" id="GDScript_ompse"]
+script/source = "extends Node2D
+
+var firebolt
+var hitbox
+var attackTimer: Timer
+var canAttack: bool
+var cursorPosition
+var attackDirection
+var collisionAngle
+var speed
+const fireboltPath = preload(\"res://firebolt.tscn\")
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	attackTimer = get_node(\"AttackTimer\")
+	canAttack = true
+	speed = 50
+	firebolt = fireboltPath.instance()
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	
+	#Rotates wand to cursor position
+	cursorPosition = get_global_mouse_position()
+	attackDirection = cursorPosition - global_position
+	collisionAngle = attackDirection.angle()
+	rotation = collisionAngle
+	
+		
+		
+		
+		
+	if Input.is_action_just_pressed(\"fire\"):
+		if !canAttack:
+			return
+		get_tree().get_root().add_child(firebolt)
+		attackTimer.start()
+		canAttack = false	
+
+
+
+func _on_attack_timer_timeout():
+	canAttack = true
+		
+		
+	
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xugfg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_040bo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FireWand" type="Node2D"]
+script = SubResource("GDScript_ompse")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 0.806342
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_xugfg")
+
+[node name="AttackTimer" type="Timer" parent="."]
+editor_description = "Attack Timer"
+wait_time = 1.2
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout" flags=18]

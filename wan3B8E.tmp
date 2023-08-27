@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://buf47gialjj6r"]
+
+[ext_resource type="Script" path="res://wand.gd" id="1_35uyd"]
+[ext_resource type="Texture2D" uid="uid://bvq3k8umopoj2" path="res://wand.png" id="1_ikx8g"]
+[ext_resource type="Texture2D" uid="uid://dhy7eyj63snle" path="res://lightningone.png" id="2_wkkmw"]
+[ext_resource type="Texture2D" uid="uid://duo83mkir7b07" path="res://lightningtwo.png" id="3_bfgpd"]
+[ext_resource type="Texture2D" uid="uid://dr1gtxj8k72m1" path="res://Blank.png" id="5_6vk2d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xugfg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ikx8g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8g216"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wkkmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bfgpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wkkmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bfgpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wkkmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bfgpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wkkmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bfgpd")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6vk2d")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sv5t"]
+size = Vector2(141, 18)
+
+[node name="Wand" type="Node2D"]
+script = ExtResource("1_35uyd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_xugfg")
+
+[node name="LightningAttack" type="Area2D" parent="."]
+
+[node name="Lightning" type="AnimatedSprite2D" parent="LightningAttack"]
+position = Vector2(77, 8)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_8g216")
+animation = &"Attack"
+frame = 7
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightningAttack"]
+position = Vector2(77.5, -8)
+shape = SubResource("RectangleShape2D_8sv5t")
+disabled = true
+
+[connection signal="body_entered" from="LightningAttack" to="." method="_on_lightning_attack_body_entered"]
