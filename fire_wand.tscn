@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgh2jvtowvkak"]
 
 [ext_resource type="Script" path="res://fire_wand.gd" id="1_i5k4g"]
-[ext_resource type="Texture2D" uid="uid://bvq3k8umopoj2" path="res://wand.png" id="2_040bo"]
+[ext_resource type="Texture2D" uid="uid://dix3c4eytky52" path="res://Sprites/wand.png" id="2_hvrtt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xugfg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_040bo")
+"texture": ExtResource("2_hvrtt")
 }],
 "loop": true,
 "name": &"default",

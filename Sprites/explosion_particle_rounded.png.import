@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c53nouktbpgm4"
-path="res://.godot/imported/crosshiar.png-ca67014b87cec6099a27180556648a3a.ctex"
+uid="uid://dco3f776q28wo"
+path="res://.godot/imported/explosion_particle_rounded.png-fefc1bde15382de07ee2ff3c69d85f2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crosshiar.png"
-dest_files=["res://.godot/imported/crosshiar.png-ca67014b87cec6099a27180556648a3a.ctex"]
+source_file="res://Sprites/explosion_particle_rounded.png"
+dest_files=["res://.godot/imported/explosion_particle_rounded.png-fefc1bde15382de07ee2ff3c69d85f2b.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

@@ -1,55 +1,55 @@
 [gd_scene load_steps=14 format=3 uid="uid://7s552ku4hfhi"]
 
 [ext_resource type="Script" path="res://wizard.gd" id="1_2fjge"]
-[ext_resource type="Texture2D" uid="uid://buvg820pvvk4r" path="res://star.png" id="1_oflw5"]
-[ext_resource type="Texture2D" uid="uid://bkb86s6jqvmgb" path="res://enemy-deadth.png" id="3_xhtjw"]
+[ext_resource type="Texture2D" uid="uid://x1keg8e53xb2" path="res://Sprites/enemy-deadth.png" id="2_uwmfh"]
+[ext_resource type="Texture2D" uid="uid://ctbtwc3jheivp" path="res://Sprites/star.png" id="3_bms3u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pn8lw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tooek"]
-atlas = ExtResource("3_xhtjw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cjup"]
+atlas = ExtResource("2_uwmfh")
 region = Rect2(0, 0, 40, 41)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y48gf"]
-atlas = ExtResource("3_xhtjw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hacuv"]
+atlas = ExtResource("2_uwmfh")
 region = Rect2(40, 0, 40, 41)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_508ft"]
-atlas = ExtResource("3_xhtjw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gxl7"]
+atlas = ExtResource("2_uwmfh")
 region = Rect2(80, 0, 40, 41)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kp7jj"]
-atlas = ExtResource("3_xhtjw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_un3ev"]
+atlas = ExtResource("2_uwmfh")
 region = Rect2(120, 0, 40, 41)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0vfag"]
-atlas = ExtResource("3_xhtjw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0frh"]
+atlas = ExtResource("2_uwmfh")
 region = Rect2(160, 0, 40, 41)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lnx4v"]
-atlas = ExtResource("3_xhtjw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ei67"]
+atlas = ExtResource("2_uwmfh")
 region = Rect2(200, 0, 40, 41)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h6akb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tooek")
+"texture": SubResource("AtlasTexture_4cjup")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y48gf")
+"texture": SubResource("AtlasTexture_hacuv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_508ft")
+"texture": SubResource("AtlasTexture_0gxl7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kp7jj")
+"texture": SubResource("AtlasTexture_un3ev")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0vfag")
+"texture": SubResource("AtlasTexture_y0frh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lnx4v")
+"texture": SubResource("AtlasTexture_7ei67")
 }],
 "loop": false,
 "name": &"Death",
@@ -57,7 +57,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_oflw5")
+"texture": ExtResource("3_bms3u")
 }],
 "loop": true,
 "name": &"Idle",
@@ -79,7 +79,7 @@ shape = SubResource("RectangleShape2D_pn8lw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.01, 0.01)
 sprite_frames = SubResource("SpriteFrames_h6akb")
-animation = &"Idle"
+animation = &"Death"
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 

@@ -1,18 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://itgqxfgfr1r8"]
+[gd_scene load_steps=10 format=3 uid="uid://itgqxfgfr1r8"]
 
-[ext_resource type="Texture2D" uid="uid://c57jvpeecbmq5" path="res://firebolt.png" id="1_qcwvx"]
 [ext_resource type="Script" path="res://firebolt.gd" id="1_ymyy6"]
+[ext_resource type="Texture2D" uid="uid://chtormhqtofdg" path="res://Sprites/firebolt.png" id="2_ibpjp"]
 [ext_resource type="PackedScene" uid="uid://caxwh7b0g4ypn" path="res://explosion.tscn" id="3_q67cg"]
-[ext_resource type="Texture2D" uid="uid://2pvemw1a72qi" path="res://firebolttwo.png" id="3_wxsto"]
+[ext_resource type="Texture2D" uid="uid://btrdmnt6fhgjt" path="res://Sprites/firebolttwo.png" id="3_yog3n"]
+[ext_resource type="Texture2D" uid="uid://dco3f776q28wo" path="res://Sprites/explosion_particle_rounded.png" id="5_0bpjd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vnes7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_qcwvx")
+"texture": ExtResource("2_ibpjp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_wxsto")
+"texture": ExtResource("3_yog3n")
 }],
 "loop": true,
 "name": &"fire",
@@ -96,6 +97,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_7jslu")
 
 [node name="Explosion" parent="." instance=ExtResource("3_q67cg")]
+texture = ExtResource("5_0bpjd")
 metadata/_edit_group_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

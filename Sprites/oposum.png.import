@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2pvemw1a72qi"
-path="res://.godot/imported/firebolttwo.png-6a42988fed9ce4a985a95969f738b5e7.ctex"
+uid="uid://y4ereceqkoxw"
+path="res://.godot/imported/oposum.png-6419fa081bcc2040a6d3099c2529497b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://firebolttwo.png"
-dest_files=["res://.godot/imported/firebolttwo.png-6a42988fed9ce4a985a95969f738b5e7.ctex"]
+source_file="res://Sprites/oposum.png"
+dest_files=["res://.godot/imported/oposum.png-6419fa081bcc2040a6d3099c2529497b.ctex"]
 
 [params]
 

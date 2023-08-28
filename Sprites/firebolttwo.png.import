@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw8rqpp0nxypy"
-path="res://.godot/imported/crosshair.png-b7f9cb2e0fc32a087972fec001d3421e.ctex"
+uid="uid://btrdmnt6fhgjt"
+path="res://.godot/imported/firebolttwo.png-21fee9ac55e99f7b914817d56d004f2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://crosshair.png"
-dest_files=["res://.godot/imported/crosshair.png-b7f9cb2e0fc32a087972fec001d3421e.ctex"]
+source_file="res://Sprites/firebolttwo.png"
+dest_files=["res://.godot/imported/firebolttwo.png-21fee9ac55e99f7b914817d56d004f2e.ctex"]
 
 [params]
 

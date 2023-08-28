@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2ja58n84p6hj"
-path="res://.godot/imported/explosion_particle_rounded.png-7cc126ac056f62963001963e1bdd9096.ctex"
+uid="uid://6i87vfgcc3jr"
+path="res://.godot/imported/emission.jpeg-96ff78bbf490702218ce7bdd86db4427.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://explosion_particle_rounded.png"
-dest_files=["res://.godot/imported/explosion_particle_rounded.png-7cc126ac056f62963001963e1bdd9096.ctex"]
+source_file="res://Sprites/emission.jpeg"
+dest_files=["res://.godot/imported/emission.jpeg-96ff78bbf490702218ce7bdd86db4427.ctex"]
 
 [params]
 

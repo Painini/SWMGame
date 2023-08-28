@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://darttd7ke6668" path="res://player.tscn" id="1_chf0i"]
 [ext_resource type="Script" path="res://BG.gd" id="2_dcp4m"]
-[ext_resource type="Texture2D" uid="uid://da5fuprjo4bw4" path="res://sky.jpg" id="3_mt282"]
-[ext_resource type="Texture2D" uid="uid://bv4l1dmjrtp7e" path="res://tileset.png" id="4_gd6lc"]
+[ext_resource type="Texture2D" uid="uid://drufu0nbbepgf" path="res://Sprites/sky.jpg" id="2_jxt37"]
+[ext_resource type="Texture2D" uid="uid://ceuu2bolo6q3u" path="res://tileset.png" id="4_gd6lc"]
 [ext_resource type="PackedScene" uid="uid://cgh2jvtowvkak" path="res://fire_wand.tscn" id="5_h2qyv"]
 [ext_resource type="PackedScene" uid="uid://cus8oap74b4b2" path="res://possum.tscn" id="5_s6y57"]
 [ext_resource type="PackedScene" uid="uid://7s552ku4hfhi" path="res://wizard.tscn" id="7_ucijy"]
@@ -458,7 +458,7 @@ metadata/_edit_group_ = true
 
 [node name="Sky" type="Sprite2D" parent="BG/ParallaxLayer2"]
 position = Vector2(389, 237)
-texture = ExtResource("3_mt282")
+texture = ExtResource("2_jxt37")
 
 [node name="TileMap" type="TileMap" parent="." groups=["walls"]]
 tile_set = SubResource("TileSet_47s16")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://darttd7ke6668"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_qocrt"]
-[ext_resource type="Texture2D" uid="uid://dn74lcb2hvsfx" path="res://BlueWizard.png" id="2_nmtv1"]
+[ext_resource type="Texture2D" uid="uid://dfp0nk2gex7v8" path="res://Sprites/BlueWizard.png" id="2_iawbh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jm88e"]
 radius = 7.66667
@@ -11,7 +11,7 @@ height = 25.3333
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nmtv1")
+"texture": ExtResource("2_iawbh")
 }],
 "loop": true,
 "name": &"Idle",

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://caxwh7b0g4ypn"]
 
-[ext_resource type="Texture2D" uid="uid://2ja58n84p6hj" path="res://explosion_particle_rounded.png" id="1_2thxh"]
+[ext_resource type="Texture2D" uid="uid://dco3f776q28wo" path="res://Sprites/explosion_particle_rounded.png" id="1_ak7th"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_51ni2"]
 blend_mode = 1
@@ -51,7 +51,7 @@ material = SubResource("CanvasItemMaterial_51ni2")
 emitting = false
 amount = 12
 process_material = SubResource("ParticleProcessMaterial_gwxpo")
-texture = ExtResource("1_2thxh")
+texture = ExtResource("1_ak7th")
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0

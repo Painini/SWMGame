@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c57jvpeecbmq5"
-path="res://.godot/imported/firebolt.png-b78e5b8888f22555678a408fc329031e.ctex"
+uid="uid://dcfpab4cgwjih"
+path="res://.godot/imported/firebolt_enemy.png-e6ee5bc31e6ea8bef716fd46881106a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://firebolt.png"
-dest_files=["res://.godot/imported/firebolt.png-b78e5b8888f22555678a408fc329031e.ctex"]
+source_file="res://Sprites/firebolt_enemy.png"
+dest_files=["res://.godot/imported/firebolt_enemy.png-e6ee5bc31e6ea8bef716fd46881106a7.ctex"]
 
 [params]
 

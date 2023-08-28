@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn74lcb2hvsfx"
-path="res://.godot/imported/BlueWizard.png-a2e5bde94a20bdb8087ef707cd1382c1.ctex"
+uid="uid://dfp0nk2gex7v8"
+path="res://.godot/imported/BlueWizard.png-6d0054111aa56609920975f5f5a7bce9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BlueWizard.png"
-dest_files=["res://.godot/imported/BlueWizard.png-a2e5bde94a20bdb8087ef707cd1382c1.ctex"]
+source_file="res://Sprites/BlueWizard.png"
+dest_files=["res://.godot/imported/BlueWizard.png-6d0054111aa56609920975f5f5a7bce9.ctex"]
 
 [params]
 

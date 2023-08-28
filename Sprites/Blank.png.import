@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doylgfgsti8hb"
-path="res://.godot/imported/oposum.png-1cc54c3739e92d2e1fa0436321ba07be.ctex"
+uid="uid://6mqs5cn3hheu"
+path="res://.godot/imported/Blank.png-f865fcc161bd12a762d6e2d6efef47d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://oposum.png"
-dest_files=["res://.godot/imported/oposum.png-1cc54c3739e92d2e1fa0436321ba07be.ctex"]
+source_file="res://Sprites/Blank.png"
+dest_files=["res://.godot/imported/Blank.png-f865fcc161bd12a762d6e2d6efef47d9.ctex"]
 
 [params]
 

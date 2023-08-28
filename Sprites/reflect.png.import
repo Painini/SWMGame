@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da5fuprjo4bw4"
-path="res://.godot/imported/sky.jpg-4edd319b4718930c5cb6979fecb9a4f3.ctex"
+uid="uid://bpeaqj0pj4727"
+path="res://.godot/imported/reflect.png-2bb451fc0214ac5336b3740a3be44f04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sky.jpg"
-dest_files=["res://.godot/imported/sky.jpg-4edd319b4718930c5cb6979fecb9a4f3.ctex"]
+source_file="res://Sprites/reflect.png"
+dest_files=["res://.godot/imported/reflect.png-2bb451fc0214ac5336b3740a3be44f04.ctex"]
 
 [params]
 

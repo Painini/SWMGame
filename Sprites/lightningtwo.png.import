@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chxupe8a0yny8"
-path="res://.godot/imported/explosion_particle.png-a6a406ffad8faac06787f838ecc4b3d1.ctex"
+uid="uid://c8kdhfq870l6c"
+path="res://.godot/imported/lightningtwo.png-88e30c0b6992498ea04b98c1afe8a3d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://explosion_particle.png"
-dest_files=["res://.godot/imported/explosion_particle.png-a6a406ffad8faac06787f838ecc4b3d1.ctex"]
+source_file="res://Sprites/lightningtwo.png"
+dest_files=["res://.godot/imported/lightningtwo.png-88e30c0b6992498ea04b98c1afe8a3d4.ctex"]
 
 [params]
 

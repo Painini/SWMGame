@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duo83mkir7b07"
-path="res://.godot/imported/lightningtwo.png-649c06d3fbbce133b6833c4c893567a1.ctex"
+uid="uid://dlqug4sy8ywou"
+path="res://.godot/imported/ray.png-792490baab2f25338a71fc5ab10f2e00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://lightningtwo.png"
-dest_files=["res://.godot/imported/lightningtwo.png-649c06d3fbbce133b6833c4c893567a1.ctex"]
+source_file="res://Sprites/ray.png"
+dest_files=["res://.godot/imported/ray.png-792490baab2f25338a71fc5ab10f2e00.ctex"]
 
 [params]
 
