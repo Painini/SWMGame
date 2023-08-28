@@ -3,13 +3,34 @@ extends CharacterBody2D
 
 const speed = 250.0
 const JUMP_VELOCITY = -400.0
-
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+const reflectPath = preload("res://reflect.tscn")
+var reflect
+var cursorPosition
+var attackDirection
+var attackAngle
+var reflectPos
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var rotNode
 
+func _ready():
+	reflectPos = get_node("RotationNode/ReflectPos")
+	rotNode = get_node("RotationNode")
 
+func _process(delta):
+	cursorPosition = get_global_mouse_position()
+	attackDirection = cursorPosition - global_position
+	attackAngle = attackDirection.angle()
+	rotNode.rotation = attackAngle
+	
+	if is_instance_valid(reflect):
+		reflect.global_position = reflectPos.global_position
+		
 func _physics_process(delta):
+	
+	if Game.playerHP < 1:
+		queue_free()
+		get_tree().change_scene_to_file("res://main.tscn")
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -28,6 +49,13 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-	if Game.playerHP < 1:
-		queue_free()
-		get_tree().change_scene_to_file("res://main.tscn")
+	if Input.is_action_just_pressed("sec_fire"):
+		reflectAttack()
+	
+func reflectAttack():
+	reflect = reflectPath.instantiate()
+	reflect.rotation = attackAngle
+	reflect.direction = attackDirection
+	reflect.global_position = reflectPos.global_position
+	get_tree().get_root().add_child(reflect)
+	

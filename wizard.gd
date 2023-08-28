@@ -8,6 +8,7 @@ var attackDirection
 var attackAngle
 var canAttack
 var attackTimer
+var attackPos
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,13 +17,14 @@ func _ready():
 	seesPlayer = false
 	canAttack = true
 	attackTimer = get_node("AttackTimer")
+	attackPos = get_node("AttackPos")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	
 	attackDirection = player.position - global_position
 	attackAngle = attackDirection.angle()
-	
+	rotation = attackAngle
 	if seesPlayer:
 		if canAttack:
 			fire()
@@ -52,7 +54,7 @@ func fire():
 	firebolt = fireboltPath.instantiate()
 	firebolt.rotation = attackAngle
 	firebolt.direction = attackDirection
-	firebolt.global_position = global_position
+	firebolt.global_position = attackPos.global_position
 	get_tree().get_root().add_child(firebolt)
 	attackTimer.start()
 	canAttack = false	

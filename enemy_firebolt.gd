@@ -20,12 +20,13 @@ func _on_area_2d_body_entered(body):
 		speed = 0
 		animator.play("Hit")
 
-
-
-
 func _on_area_2d_area_entered(area):
 	if area.name == ("HurtboxPlayer"):
 		Game.playerHP -= 5
 		animator.play("Hit")
 		print("did damage to player")
-	
+		
+	if area.is_in_group("hurtbox"):
+		area.get_parent().HP -= 5
+		animator.play("Hit")
+		print("Reflected Projectile Hit")

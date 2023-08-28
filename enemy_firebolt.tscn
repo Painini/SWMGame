@@ -86,7 +86,7 @@ visibility_layer = 2
 sprite_frames = SubResource("SpriteFrames_cueiv")
 animation = &"fire"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["projectile"]]
 light_mask = 2
 visibility_layer = 2
 

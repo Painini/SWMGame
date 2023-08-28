@@ -47,3 +47,9 @@ position = Vector2(-3.50177e-06, 1.25)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_y7bfc")
 debug_color = Color(0.996078, 0, 0.117647, 0.419608)
+
+[node name="RotationNode" type="Node2D" parent="."]
+
+[node name="ReflectPos" type="Marker2D" parent="RotationNode"]
+position = Vector2(50, 0)
+scale = Vector2(0.3, 0.3)
