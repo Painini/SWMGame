@@ -8,6 +8,8 @@ var HP = 10
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
 func _physics_process(delta):
+	if HP < 1:
+		death()
 	velocity.y += gravity * delta
 	if chase == true :
 		if get_node("AnimatedSprite2D").animation != "Death":
@@ -26,12 +28,7 @@ func _physics_process(delta):
 			get_node("AnimatedSprite2D").play("Idle")
 		velocity.x = 0	
 	move_and_slide()
-	
-	
-func _process(_delta):
-	if HP < 1:
-		death()
-	
+
 func _on_player_detection_body_entered(body):
 	if body.name == "Player":
 		chase = true
@@ -49,9 +46,12 @@ func _on_player_collision_body_entered(body):
 		
 func death():
 	chase = false
+	get_node("CollisionShape2D").set_disabled(true)
+	get_node("PlayerCollision/CollisionShape2D").set_disabled(true)
+	gravity = 0
 	get_node("AnimatedSprite2D").play("Death")
 	await get_node("AnimatedSprite2D").animation_finished
-	self.queue_free()	
+	self.queue_free()
 		
 
 
