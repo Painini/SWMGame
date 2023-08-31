@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cus8oap74b4b2"]
+[gd_scene load_steps=23 format=3 uid="uid://cus8oap74b4b2"]
 
 [ext_resource type="Script" path="res://possum.gd" id="1_27ok8"]
 [ext_resource type="Texture2D" uid="uid://x1keg8e53xb2" path="res://Sprites/enemy-deadth.png" id="2_eoan0"]
@@ -121,9 +121,6 @@ radius = 7.50417
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7bmr2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3njm"]
-size = Vector2(1.3125, 0.1875)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1026"]
 size = Vector2(1.4375, 0.5625)
 
@@ -157,14 +154,6 @@ monitorable = false
 scale = Vector2(12, 12)
 shape = SubResource("CircleShape2D_7bmr2")
 
-[node name="PlayerDeath" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
-position = Vector2(0.5, -6.5)
-scale = Vector2(16, 16)
-shape = SubResource("RectangleShape2D_s3njm")
-
 [node name="PlayerCollision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
@@ -182,5 +171,4 @@ debug_color = Color(0.964706, 0.180392, 0.113725, 0.419608)
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerRemember" to="." method="_on_player_remember_body_exited"]
-[connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]
 [connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]

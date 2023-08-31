@@ -4,9 +4,14 @@ var speed = 150
 var chase = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var HP = 10
+var collisionWorld
+var collisionPlayer
 
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
+	collisionWorld = get_node("CollisionShape2D")
+	collisionPlayer = get_node("PlayerCollision/CollisionShape2D")
+	
 func _physics_process(delta):
 	if HP < 1:
 		death()
@@ -32,22 +37,16 @@ func _physics_process(delta):
 func _on_player_detection_body_entered(body):
 	if body.name == "Player":
 		chase = true
-
-
-
-func _on_player_death_body_entered(body):
-	if body.name == "Player":
-		death()
-
+		
+		
 func _on_player_collision_body_entered(body):
 	if body.name == "Player":
 		Game.playerHP -= 3
-		death()
-		
+	
+	
+	
 func death():
 	chase = false
-	get_node("CollisionShape2D").set_disabled(true)
-	get_node("PlayerCollision/CollisionShape2D").set_disabled(true)
 	gravity = 0
 	get_node("AnimatedSprite2D").play("Death")
 	await get_node("AnimatedSprite2D").animation_finished

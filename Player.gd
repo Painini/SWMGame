@@ -2,10 +2,11 @@ extends CharacterBody2D
 
 
 var speed = 0
-const maxSpeed = 250
+const maxSpeed = 200
+const maxSprintSpeed = 280
 var acceleration = 2400
 var decceleration = 50
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -320.0
 const reflectPath = preload("res://reflect.tscn")
 var reflect
 var cursorPosition
