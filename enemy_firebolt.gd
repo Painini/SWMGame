@@ -23,8 +23,8 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_area_entered(area):
 	if area.name == ("HurtboxPlayer"):
 		Game.playerHP -= 5
-		animator.play("Hit")
 		print("did damage to player")
+		animator.play("Hit")
 		
 	if area.is_in_group("hurtbox"):
 		area.get_parent().HP -= 5

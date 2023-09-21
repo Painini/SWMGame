@@ -15,8 +15,12 @@ var attackAngle
 var meleePos
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var rotNode
+var attackTimer: Timer
+var canAttack: bool
 
 func _ready():
+	attackTimer = get_node("AttackTimer")
+	canAttack = true
 	meleePos = get_node("RotationNode/MeleePos")
 	rotNode = get_node("RotationNode")
 
@@ -66,13 +70,21 @@ func _physics_process(delta):
 		meleeAttack()
 	
 func meleeAttack():
+	if !canAttack:
+		return
 	melee = meleePath.instantiate()
 	melee.rotation = attackAngle
 	melee.global_position = meleePos.global_position
 	get_tree().get_root().add_child(melee)
+	attackTimer.start()
+	canAttack = false
 	
 
 
 func _on_scene_loader_body_entered(body):
 	if body.get_parent().name == "Player":
 		get_tree().change_scene_to_file("main.tscn")
+
+
+func _on_attack_timer_timeout():
+	canAttack = true

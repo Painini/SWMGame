@@ -53,3 +53,8 @@ debug_color = Color(0.996078, 0, 0.117647, 0.419608)
 [node name="MeleePos" type="Marker2D" parent="RotationNode"]
 position = Vector2(50, 0)
 scale = Vector2(0.3, 0.3)
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
