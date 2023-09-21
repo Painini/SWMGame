@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6q6gn8le8ysc"]
+
+[ext_resource type="Script" path="res://MeleeAttack.gd" id="1_0ynej"]
+[ext_resource type="Texture2D" uid="uid://r8ob7vyy7oo5" path="res://Sprites/melee_attack.png" id="2_bww03"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i11v2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bww03")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wu7p"]
+size = Vector2(34, 72)
+
+[sub_resource type="Animation" id="Animation_ep0sp"]
+resource_name = "Attack"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yr1ic"]
+_data = {
+"Attack": SubResource("Animation_ep0sp")
+}
+
+[node name="MeleeAttack" type="Node2D"]
+script = ExtResource("1_0ynej")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.25, 2.75)
+scale = Vector2(0.765, 0.735)
+sprite_frames = SubResource("SpriteFrames_i11v2")
+animation = &"attack"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(19, 2)
+shape = SubResource("RectangleShape2D_8wu7p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yr1ic")
+}
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

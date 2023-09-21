@@ -7,17 +7,17 @@ const maxSprintSpeed = 280
 var acceleration = 2400
 var decceleration = 50
 const JUMP_VELOCITY = -320.0
-const reflectPath = preload("res://reflect.tscn")
-var reflect
+const meleePath = preload("res://melee_attack_player.tscn")
+var melee
 var cursorPosition
 var attackDirection
 var attackAngle
-var reflectPos
+var meleePos
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var rotNode
 
 func _ready():
-	reflectPos = get_node("RotationNode/ReflectPos")
+	meleePos = get_node("RotationNode/MeleePos")
 	rotNode = get_node("RotationNode")
 
 func _process(delta):
@@ -26,8 +26,8 @@ func _process(delta):
 	attackAngle = attackDirection.angle()
 	rotNode.rotation = attackAngle
 	
-	if is_instance_valid(reflect):
-		reflect.global_position = reflectPos.global_position
+	if is_instance_valid(melee):
+		melee.global_position = meleePos.global_position
 		
 func _physics_process(delta):
 	if Game.playerHP < 1:
@@ -60,16 +60,19 @@ func _physics_process(delta):
 		if speed < 0:
 			speed = 0
 		velocity.x = move_toward(velocity.x, 0, decceleration)
-		
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("sec_fire"):
-		reflectAttack()
+		meleeAttack()
 	
-func reflectAttack():
-	reflect = reflectPath.instantiate()
-	reflect.rotation = attackAngle
-	reflect.direction = attackDirection
-	reflect.global_position = reflectPos.global_position
-	get_tree().get_root().add_child(reflect)
+func meleeAttack():
+	melee = meleePath.instantiate()
+	melee.rotation = attackAngle
+	melee.global_position = meleePos.global_position
+	get_tree().get_root().add_child(melee)
 	
+
+
+func _on_scene_loader_body_entered(body):
+	if body.get_parent().name == "Player":
+		get_tree().change_scene_to_file("main.tscn")

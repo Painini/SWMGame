@@ -50,6 +50,6 @@ debug_color = Color(0.996078, 0, 0.117647, 0.419608)
 
 [node name="RotationNode" type="Node2D" parent="."]
 
-[node name="ReflectPos" type="Marker2D" parent="RotationNode"]
+[node name="MeleePos" type="Marker2D" parent="RotationNode"]
 position = Vector2(50, 0)
 scale = Vector2(0.3, 0.3)
