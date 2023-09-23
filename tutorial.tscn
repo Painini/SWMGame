@@ -431,6 +431,7 @@ layer_0/tile_data = PackedInt32Array(1769472, 65536, 3, 1835008, 65536, 3, 17694
 position = Vector2(123, 511)
 
 [node name="MeleeAttack" parent="Player/Player" instance=ExtResource("3_7pwky")]
+visible = false
 
 [node name="Mobs" type="Node2D" parent="."]
 

@@ -47,6 +47,8 @@ func _on_player_collision_body_entered(body):
 	
 func death():
 	chase = false
+	collisionWorld.disabled = true
+	collisionPlayer.disabled = true
 	gravity = 0
 	get_node("AnimatedSprite2D").play("Death")
 	await get_node("AnimatedSprite2D").animation_finished

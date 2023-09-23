@@ -9,9 +9,11 @@ var attackAngle
 var canAttack
 var attackTimer
 var attackPos
+var collisionWorld
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	collisionWorld = get_node("CollisionShape2D")
 	get_node("AnimatedSprite2D").play("Idle")
 	player = get_node("../../Player/Player")
 	seesPlayer = false
@@ -46,6 +48,7 @@ func _on_attack_timer_timeout():
 	canAttack = true
 
 func death():
+	collisionWorld.disabled = true
 	get_node("AnimatedSprite2D").play("Death")
 	await get_node("AnimatedSprite2D").animation_finished
 	self.queue_free()	
