@@ -98,7 +98,6 @@ metadata/_edit_group_ = true
 [node name="Area2D" type="Area2D" parent="." groups=["projectile"]]
 light_mask = 2
 visibility_layer = 2
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -3)

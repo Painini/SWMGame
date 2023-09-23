@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6q6gn8le8ysc"]
+[gd_scene load_steps=11 format=3 uid="uid://c6q6gn8le8ysc"]
 
 [ext_resource type="Script" path="res://MeleeAttack.gd" id="1_0ynej"]
 [ext_resource type="Texture2D" uid="uid://r8ob7vyy7oo5" path="res://Sprites/melee_attack.png" id="2_bww03"]
+[ext_resource type="Texture2D" uid="uid://fe5xe5goupm4" path="res://Sprites/white_circle.png" id="3_7sf3q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i11v2"]
 animations = [{
@@ -39,6 +40,29 @@ _data = {
 "Attack": SubResource("Animation_ep0sp")
 }
 
+[sub_resource type="Gradient" id="Gradient_st5eg"]
+offsets = PackedFloat32Array(0.234783, 0.913043)
+colors = PackedColorArray(0.882353, 0.156863, 0.117647, 1, 0.8, 0.2, 0.137255, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qdwh6"]
+gradient = SubResource("Gradient_st5eg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_opcem"]
+particle_flag_disable_z = true
+direction = Vector3(1, 0, 1)
+spread = 65.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 300.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 1000.0
+damping_max = 1000.0
+scale_min = 0.1
+scale_max = 0.15
+color_ramp = SubResource("GradientTexture1D_qdwh6")
+
 [node name="MeleeAttack" type="Node2D"]
 script = ExtResource("1_0ynej")
 
@@ -58,5 +82,12 @@ shape = SubResource("RectangleShape2D_8wu7p")
 libraries = {
 "": SubResource("AnimationLibrary_yr1ic")
 }
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(21, 0)
+process_material = SubResource("ParticleProcessMaterial_opcem")
+texture = ExtResource("3_7sf3q")
+lifetime = 0.3
+explosiveness = 0.85
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

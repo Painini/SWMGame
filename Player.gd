@@ -17,22 +17,26 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var rotNode
 var attackTimer: Timer
 var canAttack: bool
+var canRot: bool
 
 func _ready():
 	attackTimer = get_node("AttackTimer")
 	canAttack = true
 	meleePos = get_node("RotationNode/MeleePos")
 	rotNode = get_node("RotationNode")
+	canRot = true
 
 func _process(delta):
 	cursorPosition = get_global_mouse_position()
 	attackDirection = cursorPosition - global_position
 	attackAngle = attackDirection.angle()
-	rotNode.rotation = attackAngle
-	
+	if canRot:
+		rotNode.rotation = attackAngle
 	if is_instance_valid(melee):
 		melee.global_position = meleePos.global_position
+			
 		
+
 func _physics_process(delta):
 	if Game.playerHP < 1:
 		queue_free()
@@ -78,6 +82,7 @@ func meleeAttack():
 	get_tree().get_root().add_child(melee)
 	attackTimer.start()
 	canAttack = false
+	canRot = false
 	
 
 
@@ -88,3 +93,4 @@ func _on_scene_loader_body_entered(body):
 
 func _on_attack_timer_timeout():
 	canAttack = true
+	canRot = true
