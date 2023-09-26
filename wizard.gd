@@ -48,6 +48,7 @@ func _on_attack_timer_timeout():
 	canAttack = true
 
 func death():
+	canAttack = false
 	collisionWorld.disabled = true
 	get_node("AnimatedSprite2D").play("Death")
 	await get_node("AnimatedSprite2D").animation_finished

@@ -12,4 +12,4 @@ func _on_area_2d_area_entered(area):
 	if (area.is_in_group("hurtbox")):
 		area.get_parent().HP -= 5
 		animator.stop()
-		animator.play("Attack")
+		animator.play("Hit")
